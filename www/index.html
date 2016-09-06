@@ -80,7 +80,30 @@
             </div>
 
             <div data-position="fixed" class="wow fadeInDown">
-                <a href="#" class="ui-btn ui-btn-raised clr-primary">Send Enquiry</a>
+                <a href="#enquiry" class="ui-btn ui-btn-raised clr-primary">Send Enquiry</a>
+            </div>
+        </div>
+
+        <div data-role="page" id="enquiry">
+            <div data-role="header">
+                <a href="#kslcity" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-long-arrow-return"></i></a>
+                <h2>Enquiry Form</h2>
+            </div>
+            <div data-role="main">
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" value="" data-clear-btn="true" placeholder="Type your name here...">
+                    <label for="email">Email Address:</label>
+                    <input type="email" name="email" id="email" value="" data-clear-btn="true" placeholder="Type your email here...">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                            <legend>Duration</legend>
+                            <input type="radio" name="radio-choice-a" id="radio-choice-ab" value="choice-a">
+                            <label for="radio-choice-ab">Day</label>
+                            <input type="radio" name="radio-choice-a" id="radio-choice-bb" value="choice-b">
+                            <label for="radio-choice-bb">Week</label>
+                        </fieldset>
+                    <a href="#" class="ui-btn ui-btn-raised clr-primary">Submit</a>
+                </form>
             </div>
         </div>
 
