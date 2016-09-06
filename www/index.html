@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Pop Up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="vendor/waves/waves.min.css" />
+        <link rel="stylesheet" href="vendor/wow/animate.css" />
+        <link rel="stylesheet" href="css/nativedroid2.css" />
+
+
+    </head>
+    <body>
+
+        <div data-role="page" id="main">
+
+            <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+                <h1 class="wow fadeIn" data-wow-delay='0.4s'>PopUp</h1>
+            </div>
+
+            <div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+                
+                <ul data-role="listview" data-icon="false">
+                    <li data-role="list-divider">
+                        <input type="text" data-type="search" id="spaceInput" placeholder="Type anything..">
+                    </li>
+                        <li class="elements" data-filter="true" data-input="#spaceInput">
+                            <a href="#kslcity">
+                                <img src="http://purple.com.my/popup/kslcity3.jpg" class="ui-thumbnail ui-thumbnail-circular">
+                                <h2>KSL City</h2>
+                                <p>Johor Bharu</p>
+                                <p>Johor</p>
+                                <p>RM 1++/week</p>
+                            </a>
+                        </li>
+                        <li class="elements" data-filter="true" data-input="#spaceInput">
+                            <a href="#sungeiwang">
+                                <img src="http://purple.com.my/popup/sungeiwang2.jpg" class="ui-thumbnail ui-thumbnail-circular">
+                                <h2>Sungei Wang Plaza</h2>
+                                <p>Bukit Bintang</p>
+                                <p>Kuala Lumpur</p>
+                                <p>RM 1++/week</p>
+                            </a>
+                        </li>
+                        <li class="elements" data-filter="true" data-input="#spaceInput">
+                            <a href="#lowyat">
+                                <img src="http://purple.com.my/popup/lowyat.jpg" class="ui-thumbnail ui-thumbnail-circular">
+                                <h2>Plaza Low Yat</h2>
+                                <p>Imbi</p>
+                                <p>Kuala Lumpur</p>
+                                <p>RM 1++/week</p>
+                            </a>
+                        </li>
+                </ul>
+
+            </div>
+
+
+
+        </div>
+
+        <div data-role="page" id="kslcity">
+            <div data-role="header">
+                <a href="#main" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-long-arrow-return"></i></a>
+                <h2>KSL City</h2>
+            </div>
+
+            <div data-role="main" class="ui-body ui-body-a ui-corner-all">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse accumsan blandit fermentum.
+                    Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec.
+                    Donec semper mattis eros, nec condimentum ante sollicitudin quis.
+                    Etiam orci sem, porttitor ut tellus nec, blandit posuere urna.
+                    Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem.
+                    Cras porttitor est lorem, non venenatis diam convallis congue.
+                </p>
+            </div>
+
+            <div data-position="fixed" class="wow fadeInDown">
+                <a href="#" class="ui-btn ui-btn-raised clr-primary">Send Enquiry</a>
+            </div>
+        </div>
+
+
+        <!-- scripts -->
+        <script src="js/jquery-2.0.0.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="vendor/waves/waves.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+        <script src="js/nativedroid2.js"></script>
+
+    </body>
+</html>
