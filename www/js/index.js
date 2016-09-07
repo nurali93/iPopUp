@@ -24,3 +24,38 @@
         // TODO: This application has been reactivated. Restore application state here.
     };
 } )();
+
+$(document).on("pagecreate", "#main", function () {
+
+    $("#list").filterable('option', 'filterCallback', checkedOrMatch);
+    
+    $("#searchAttr input").on("change", function(){
+        $("#list").filterable("refresh");
+    });
+});
+
+function checkedOrMatch(idx, searchValue) {
+    var ret = false;
+    var day = $("#day").is(':checked');
+    var week = $("#week").is(':checked');
+    var ignoreDur = false;
+    if (!day && !week) {
+                ignoreDur = true;
+    }
+    
+    //if (searchValue && searchValue.length > 0) {
+        searchValue = searchValue.toLowerCase();
+        var filttext = $(this).data("filter") || '';
+        var dur = $(this).data("dur") || '';
+        filttext = filttext.toLowerCase();
+        if (filttext.indexOf(searchValue) < 0) {
+            ret = true; //filter this one out
+        } else if (!ignoreDur) {       
+            //found filter text now check language
+          if (  (dur == "day" && !day) || (dur == "week" && !week) ) {
+            ret = true; //filter this one out
+          }            
+        }      
+   //}    
+    return ret;
+}

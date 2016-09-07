@@ -4,6 +4,7 @@
         <title>Pop Up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="css/font-awesome.min.css" />
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" href="vendor/waves/waves.min.css" />
@@ -21,44 +22,107 @@
             </div>
 
             <div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+                <form class="ui-filterable">
+                    <input type="text" data-type="search" id="spaceInput" placeholder="Type anything..">
                 
-                <ul data-role="listview" data-icon="false">
-                    <li data-role="list-divider">
-                        <input type="text" data-type="search" id="spaceInput" placeholder="Type anything..">
+                    <fieldset id="searchAttr" data-role="controlgroup" data-type="horizontal">
+                        <input name="day" id="day" type="checkbox" data-mini="true">
+                        <label for="day">Day</label>
+                        <input name="week" id="week" type="checkbox" data-mini="true">
+                        <label for="week">Week</label>
+                    </fieldset>
+                </form>
+
+                    
+                <ul id="list" data-role="listview" data-icon="false" class="elements" data-filter="true" data-input="#spaceInput">
+                    <li data-role="list-divider"></li>
+                    <li data-dur="day">
+                        <a href="#kslcity">
+                            <img src="http://purple.com.my/popup/kslcity3.jpg" class="ui-thumbnail ui-thumbnail-circular">
+                            <h2>KSL City</h2>
+                            <p>Johor Bharu</p>
+                            <p>Johor</p>
+                            <p>RM 1++/week</p>
+                        </a>
                     </li>
-                        <li class="elements" data-filter="true" data-input="#spaceInput">
-                            <a href="#kslcity">
-                                <img src="http://purple.com.my/popup/kslcity3.jpg" class="ui-thumbnail ui-thumbnail-circular">
-                                <h2>KSL City</h2>
-                                <p>Johor Bharu</p>
-                                <p>Johor</p>
-                                <p>RM 1++/week</p>
-                            </a>
-                        </li>
-                        <li class="elements" data-filter="true" data-input="#spaceInput">
-                            <a href="#sungeiwang">
-                                <img src="http://purple.com.my/popup/sungeiwang2.jpg" class="ui-thumbnail ui-thumbnail-circular">
-                                <h2>Sungei Wang Plaza</h2>
-                                <p>Bukit Bintang</p>
-                                <p>Kuala Lumpur</p>
-                                <p>RM 1++/week</p>
-                            </a>
-                        </li>
-                        <li class="elements" data-filter="true" data-input="#spaceInput">
-                            <a href="#lowyat">
-                                <img src="http://purple.com.my/popup/lowyat.jpg" class="ui-thumbnail ui-thumbnail-circular">
-                                <h2>Plaza Low Yat</h2>
-                                <p>Imbi</p>
-                                <p>Kuala Lumpur</p>
-                                <p>RM 1++/week</p>
-                            </a>
-                        </li>
+                    <li data-dur="week">
+                        <a href="#sungeiwang">
+                            <img src="http://purple.com.my/popup/sungeiwang2.jpg" class="ui-thumbnail ui-thumbnail-circular">
+                            <h2>Sungei Wang Plaza</h2>
+                            <p>Bukit Bintang</p>
+                            <p>Kuala Lumpur</p>
+                            <p>RM 2+/day</p>
+                        </a>
+                    </li>
+                    <li data-dur="week">
+                        <a href="#lowyat">
+                            <img src="http://purple.com.my/popup/lowyat.jpg">
+                            <h2>Plaza Low Yat</h2>
+                            <p>Imbi</p>
+                            <p>Kuala Lumpur</p>
+                            <p>RM 1++/week</p>
+                        </a>
+                    </li>
+                    <li data-dur="week">
+                        <a href="#timesquare">
+                            <img src="http://purple.com.my/popup/timesquare.jpg">
+                            <h2>Berjaya Times Square</h2>
+                            <p>Imbi</p>
+                            <p>Kuala Lumpur</p>
+                            <p>RM 1++/week</p>
+                        </a>
+                    </li>
+
+                    <!-- pulau pinang region -->
+                    <li>
+                        <a href="#queensbay">
+                            <img src="http://purple.com.my/popup/queensbaymall.jpg">
+                            <h2>Queensbay Mall</h2>
+                            <p>Bayan Lepas</p>
+                            <p>Pulau Pinang</p>
+                            <p>RM 1++/week</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#gurney">
+                            <img src="http://purple.com.my/popup/gurneyplaza2.jpg">
+                            <h2>Gurney Plaza</h2>
+                            <p>George Town</p>
+                            <p>Pulau Pinang</p>
+                            <p>RM 1++/week</p>
+                        </a>
+                    </li>
+
+                    <!-- selangor region -->
+                    <li>
+                        <a href="#sunway">
+                            <img src="http://purple.com.my/popup/sunway3.jpg">
+                            <h2>Sunway Pyramid</h2>
+                            <p>Bandar Sunway</p>
+                            <p>Selangor</p>
+                            <p>RM 1++/week</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pas">
+                            <img src="http://purple.com.my/popup/pas2.jpg">
+                            <h2>Plaza Alam Sentral</h2>
+                            <p>Shah Alam</p>
+                            <p>Selangor</p>
+                            <p>RM 1++/week</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#nzx">
+                            <img src="http://purple.com.my/popup/nzx.jpg">
+                            <h2>NZX Commercial Centre</h2>
+                            <p>Petaling Jaya</p>
+                            <p>Selangor</p>
+                            <p>RM 1++/week</p>
+                        </a>
+                    </li>
                 </ul>
-
             </div>
-
-
-
         </div>
 
         <div data-role="page" id="kslcity">
@@ -81,6 +145,34 @@
 
             <div data-position="fixed" class="wow fadeInDown">
                 <a href="#enquiry" class="ui-btn ui-btn-raised clr-primary">Send Enquiry</a>
+            </div>
+            <div data-position="fixed" class="wow fadeInDown">
+                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop"><i class='ui-btn ui-btn-raised clr-primary'></i>Pop Enquiry</a>
+            </div>
+
+            <div data-role="popup" id="popupDialog">
+
+                <div data-role="header">
+                    <h1 class='nd-title'>Submit enquiry</h1>
+                </div>
+
+                <div data-role="content">
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" value="" data-clear-btn="true" placeholder="Type your name here...">
+                        <label for="email">Email Address:</label>
+                        <input type="email" name="email" id="email" value="" data-clear-btn="true" placeholder="Type your email here...">
+                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                                <legend>Duration</legend>
+                                <input type="radio" name="radio-choice-a" id="radio-choice-ab" value="choice-a">
+                                <label for="radio-choice-ab">Day</label>
+                                <input type="radio" name="radio-choice-a" id="radio-choice-bb" value="choice-b">
+                                <label for="radio-choice-bb">Week</label>
+                        </fieldset>
+                        <a href="#" class="ui-btn ui-btn-raised clr-primary">Submit</a>
+                    </form>
+
+                </div>
             </div>
         </div>
 
@@ -107,6 +199,8 @@
             </div>
         </div>
 
+        
+
 
         <!-- scripts -->
         <script src="js/jquery-2.0.0.min.js"></script>
@@ -115,6 +209,7 @@
         <script src="vendor/waves/waves.min.js"></script>
         <script src="vendor/wow/wow.min.js"></script>
         <script src="js/nativedroid2.js"></script>
+        <script src="js/index.js"></script>
 
     </body>
 </html>
