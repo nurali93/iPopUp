@@ -25,7 +25,7 @@
     };
 } )();
 
-$(document).on("pagecreate", "#main", function () {
+$(document).on("pagecreate", "#page-2", function () {
 
     $("#list").filterable('option', 'filterCallback', checkedOrMatch);
     
@@ -36,23 +36,27 @@ $(document).on("pagecreate", "#main", function () {
 
 function checkedOrMatch(idx, searchValue) {
     var ret = false;
-    var day = $("#day").is(':checked');
-    var week = $("#week").is(':checked');
-    var ignoreDur = false;
-    if (!day && !week) {
-                ignoreDur = true;
+    var tyA = $("#typeA").is(':checked');
+    var tyB = $("#typeB").is(':checked');
+    var tyC = $("#typeC").is(':checked');
+    var tyD = $("#typeD").is(':checked');
+    var ignoreType = false;
+    if (!tyA && !tyB && !tyC && !tyD) {
+                ignoreType = true;
     }
     
     //if (searchValue && searchValue.length > 0) {
         searchValue = searchValue.toLowerCase();
         var filttext = $(this).data("filter") || '';
-        var dur = $(this).data("dur") || '';
+        var ty = $(this).data("ty") || '';
         filttext = filttext.toLowerCase();
         if (filttext.indexOf(searchValue) < 0) {
             ret = true; //filter this one out
-        } else if (!ignoreDur) {       
+        } else if (!ignoreType) {       
             //found filter text now check language
-          if (  (dur == "day" && !day) || (dur == "week" && !week) ) {
+          if (  (ty == "typeA" && !tyA) || (ty == "typeB" && !tyB) || 
+                (ty == "typeC" && !tyC) || (ty == "typeD" && !tyD) 
+              ) {
             ret = true; //filter this one out
           }            
         }      

@@ -11,14 +11,52 @@
         <link rel="stylesheet" href="vendor/wow/animate.css" />
         <link rel="stylesheet" href="css/nativedroid2.css" />
 
+        <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+             In the folder of skin CSS file there are also:
+             - .png and .svg icons sprite, 
+             - preloader.gif (for browsers that do not support CSS animations) -->
+        <link rel="stylesheet" href="css/default-skin/default-skin.css"> 
 
     </head>
+    
     <body>
 
-        <div data-role="page" id="main">
+        <div data-role="page" id="mainpage">
+            <div data-role="header">
+                <h1 class="wow fadeIn" data-wow-delay='0.4s'>PopUp</h1>
+            </div>
+            <div data-role="content" class="ui-content">
+                <img src="http://placehold.it/288x288" class="ui-thumbnail">
+                <select name="place" data-native-menu="false">
+                    <option value="plA">PlaceA</option>
+                    <option value="plB">PlaceB</option>
+                    <option value="plC">PlaceC</option>
+                    <option value="plD">PlaceD</option>
+                </select>
+                <form class="ui-filterable">
+                    
+                        <fieldset id="searchType" data-role="controlgroup" data-type="horizontal">
+                            <input name="type1" id="typeA" type="radio" data-mini="true">
+                            <label for="typeA">Type A</label>
+                            <input name="type1" id="typeB" type="radio" data-mini="true">
+                            <label for="typeB">Type B</label>
+                            <input name="type1" id="typeC" type="radio" data-mini="true">
+                            <label for="typeC">Type C</label>
+                            <input name="type1" id="typeD" type="radio" data-mini="true">
+                            <label for="typeD">Type D</label>
+                        </fieldset>
+                    </form>
+
+                    <a href="#page-2" class="ui-btn ui-btn-raised clr-primary-btn">OO yeah</a>
+            </div>
+        </div>
+
+        <!-- listing page -->
+        <div data-role="page" id="page-2">
 
             <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
-                <h1 class="wow fadeIn" data-wow-delay='0.4s'>PopUp</h1>
+                <a data-rel="back" data-wow-delay='0.8s' class="ui-btn ui-btn-left wow fadeIn"><i class="zmdi zmdi-long-arrow-return"></i></a>
+                <h1>PopUp</h1>
             </div>
 
             <div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
@@ -26,18 +64,22 @@
                     <input type="text" data-type="search" id="spaceInput" placeholder="Type anything..">
                 
                     <fieldset id="searchAttr" data-role="controlgroup" data-type="horizontal">
-                        <input name="day" id="day" type="checkbox" data-mini="true">
-                        <label for="day">Day</label>
-                        <input name="week" id="week" type="checkbox" data-mini="true">
-                        <label for="week">Week</label>
+                        <input name="type" id="typeA" type="radio" data-mini="true">
+                        <label for="typeA">Type A</label>
+                        <input name="type" id="typeB" type="radio" data-mini="true">
+                        <label for="typeB">Type B</label>
+                        <input name="type" id="typeC" type="radio" data-mini="true">
+                        <label for="typeC">Type C</label>
+                        <input name="type" id="typeD" type="radio" data-mini="true">
+                        <label for="typeD">Type D</label>
                     </fieldset>
                 </form>
 
                     
                 <ul id="list" data-role="listview" data-icon="false" class="elements" data-filter="true" data-input="#spaceInput">
                     <li data-role="list-divider"></li>
-                    <li data-dur="day">
-                        <a href="#kslcity">
+                    <li data-ty="typeA">
+                        <a href="#details">
                             <img src="http://purple.com.my/popup/kslcity3.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>KSL City</h2>
                             <p>Johor Bharu</p>
@@ -45,8 +87,8 @@
                             <p>RM 1++/week</p>
                         </a>
                     </li>
-                    <li data-dur="week">
-                        <a href="#sungeiwang">
+                    <li data-ty="typeA">
+                        <a href="#details">
                             <img src="http://purple.com.my/popup/sungeiwang2.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>Sungei Wang Plaza</h2>
                             <p>Bukit Bintang</p>
@@ -54,18 +96,18 @@
                             <p>RM 2+/day</p>
                         </a>
                     </li>
-                    <li data-dur="week">
-                        <a href="#lowyat">
-                            <img src="http://purple.com.my/popup/lowyat.jpg">
+                    <li data-ty="typeB">
+                        <a href="#details">
+                            <img src="http://purple.com.my/popup/lowyat.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>Plaza Low Yat</h2>
                             <p>Imbi</p>
                             <p>Kuala Lumpur</p>
                             <p>RM 1++/week</p>
                         </a>
                     </li>
-                    <li data-dur="week">
-                        <a href="#timesquare">
-                            <img src="http://purple.com.my/popup/timesquare.jpg">
+                    <li data-ty="typeB">
+                        <a href="#details">
+                            <img src="http://purple.com.my/popup/timesquare.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>Berjaya Times Square</h2>
                             <p>Imbi</p>
                             <p>Kuala Lumpur</p>
@@ -74,18 +116,18 @@
                     </li>
 
                     <!-- pulau pinang region -->
-                    <li>
-                        <a href="#queensbay">
-                            <img src="http://purple.com.my/popup/queensbaymall.jpg">
+                    <li data-ty="typeB">
+                        <a href="#details">
+                            <img src="http://purple.com.my/popup/queensbaymall.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>Queensbay Mall</h2>
                             <p>Bayan Lepas</p>
                             <p>Pulau Pinang</p>
                             <p>RM 1++/week</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="#gurney">
-                            <img src="http://purple.com.my/popup/gurneyplaza2.jpg">
+                    <li data-ty="typeC">
+                        <a href="#details">
+                            <img src="http://purple.com.my/popup/gurneyplaza2.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>Gurney Plaza</h2>
                             <p>George Town</p>
                             <p>Pulau Pinang</p>
@@ -94,27 +136,27 @@
                     </li>
 
                     <!-- selangor region -->
-                    <li>
-                        <a href="#sunway">
-                            <img src="http://purple.com.my/popup/sunway3.jpg">
+                    <li data-ty="typeC">
+                        <a href="#details">
+                            <img src="http://purple.com.my/popup/sunway3.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>Sunway Pyramid</h2>
                             <p>Bandar Sunway</p>
                             <p>Selangor</p>
                             <p>RM 1++/week</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="#pas">
-                            <img src="http://purple.com.my/popup/pas2.jpg">
+                    <li data-ty="typeD">
+                        <a href="#details">
+                            <img src="http://purple.com.my/popup/pas2.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>Plaza Alam Sentral</h2>
                             <p>Shah Alam</p>
                             <p>Selangor</p>
                             <p>RM 1++/week</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="#nzx">
-                            <img src="http://purple.com.my/popup/nzx.jpg">
+                    <li data-ty="typeD">
+                        <a href="#details">
+                            <img src="http://purple.com.my/popup/nzx.jpg" class="ui-thumbnail ui-thumbnail-circular">
                             <h2>NZX Commercial Centre</h2>
                             <p>Petaling Jaya</p>
                             <p>Selangor</p>
@@ -122,78 +164,81 @@
                         </a>
                     </li>
                 </ul>
+
             </div>
         </div>
 
-        <div data-role="page" id="kslcity">
+        <!-- details pages -->
+        <div data-role="page" id="details">
             <div data-role="header">
-                <a href="#main" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-long-arrow-return"></i></a>
-                <h2>KSL City</h2>
+                <a data-rel="back" data-wow-delay='0.8s' class="ui-btn ui-btn-left wow fadeIn"><i class="zmdi zmdi-long-arrow-return"></i></a>
+                <h2>Details</h2>
             </div>
 
-            <div data-role="main" class="ui-body ui-body-a ui-corner-all">
+            <!-- <div data-role="main" class="ui-body ui-body-a ui-corner-all"> -->
+            <div data-role="main" class="ui-content">
+                <img src="http://placehold.it/288x288" class="ui-thumbnail">
+                     
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Suspendisse accumsan blandit fermentum.
                     Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec.
                     Donec semper mattis eros, nec condimentum ante sollicitudin quis.
                     Etiam orci sem, porttitor ut tellus nec, blandit posuere urna.
-                    Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem.
-                    Cras porttitor est lorem, non venenatis diam convallis congue.
                 </p>
-            </div>
 
-            <div data-position="fixed" class="wow fadeInDown">
-                <a href="#enquiry" class="ui-btn ui-btn-raised clr-primary">Send Enquiry</a>
-            </div>
-            <div data-position="fixed" class="wow fadeInDown">
-                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop"><i class='ui-btn ui-btn-raised clr-primary'></i>Pop Enquiry</a>
-            </div>
+                <!-- <a href="#enquiry" class="ui-btn ui-btn-raised clr-primary">Send Enquiry</a> -->
 
-            <div data-role="popup" id="popupDialog">
+                <br>
 
-                <div data-role="header">
-                    <h1 class='nd-title'>Submit enquiry</h1>
-                </div>
+                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-transition="pop" class='ui-btn ui-btn-raised clr-primary'>Pop Enquiry</a>
 
-                <div data-role="content">
-                    <form>
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" id="name" value="" data-clear-btn="true" placeholder="Type your name here...">
-                        <label for="email">Email Address:</label>
-                        <input type="email" name="email" id="email" value="" data-clear-btn="true" placeholder="Type your email here...">
-                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                                <legend>Duration</legend>
-                                <input type="radio" name="radio-choice-a" id="radio-choice-ab" value="choice-a">
-                                <label for="radio-choice-ab">Day</label>
-                                <input type="radio" name="radio-choice-a" id="radio-choice-bb" value="choice-b">
-                                <label for="radio-choice-bb">Week</label>
-                        </fieldset>
-                        <a href="#" class="ui-btn ui-btn-raised clr-primary">Submit</a>
-                    </form>
+                <div data-role="popup" id="popupDialog">
 
+                    <div data-role="header">
+                        <h1 class='nd-title'>Submit enquiry</h1>
+                    </div>
+
+                    <div data-role="main" class="ui-content">
+                        <form>
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" id="name" value="" data-clear-btn="true" placeholder="Type your name here...">
+                            <label for="email">Email Address:</label>
+                            <input type="email" name="email" id="email" value="" data-clear-btn="true" placeholder="Type your email here...">
+                            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                                    <legend>Duration</legend>
+                                    <input type="radio" name="duration" id="day" value="day">
+                                    <label for="day">Day</label>
+                                    <input type="radio" name="duration" id="week" value="week">
+                                    <label for="week">Week</label>
+                            </fieldset>
+                            <a href="#" class="ui-btn ui-btn-raised clr-primary">Submit</a>
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!-- enquiry form -->
         <div data-role="page" id="enquiry">
             <div data-role="header">
-                <a href="#kslcity" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-long-arrow-return"></i></a>
+                <a data-rel="back" data-wow-delay='0.8s' class="ui-btn ui-btn-left wow fadeIn"><i class="zmdi zmdi-long-arrow-return"></i></a>
                 <h2>Enquiry Form</h2>
             </div>
-            <div data-role="main">
+            <div data-role="main" class="ui-content">
                 <form>
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name" value="" data-clear-btn="true" placeholder="Type your name here...">
                     <label for="email">Email Address:</label>
                     <input type="email" name="email" id="email" value="" data-clear-btn="true" placeholder="Type your email here...">
-                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
                             <legend>Duration</legend>
-                            <input type="radio" name="radio-choice-a" id="radio-choice-ab" value="choice-a">
-                            <label for="radio-choice-ab">Day</label>
-                            <input type="radio" name="radio-choice-a" id="radio-choice-bb" value="choice-b">
-                            <label for="radio-choice-bb">Week</label>
-                        </fieldset>
+                            <input type="radio" name="duration" id="day" value="day">
+                            <label for="day">Day</label>
+                            <input type="radio" name="duration" id="week" value="week">
+                            <label for="week">Week</label>
+                    </fieldset>
                     <a href="#" class="ui-btn ui-btn-raised clr-primary">Submit</a>
                 </form>
             </div>
@@ -209,7 +254,9 @@
         <script src="vendor/waves/waves.min.js"></script>
         <script src="vendor/wow/wow.min.js"></script>
         <script src="js/nativedroid2.js"></script>
+
         <script src="js/index.js"></script>
 
+    
     </body>
 </html>
